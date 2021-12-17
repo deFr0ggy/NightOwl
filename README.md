@@ -8,11 +8,11 @@ Every organization receives SPAM, Phishing and Spear Phishing Emails. Whenever s
 - Does the email contained a phishing link or it contained only plain text?
 - Does the email contains any attachments?
 
-These are few of the questions which always come to our mind when any such email is received. Keeping these details in mind I have developed **Email Butcher** to automate the manual procedure to find all possible answers to our questions. 
+These are few of the questions which always come to our mind when any such email is received. Keeping these details in mind I have developed **Night Owl** to automate the manual procedure to find all possible answers to our questions. 
 
 ---
 
-**Email Butcher** is a quick and dirty python script to perform analysis on Email Headers. The script renders all the required information for you to take quick actions rather than going through the headers line by line. **The script does it for you** automatically.
+**Night Owl** is a quick and dirty python script to perform analysis on Email Headers. The script renders all the required information for you to take quick actions rather than going through the headers line by line. **The script does it for you** automatically.
 
 I have developed this script during my day job and I do plan to take it one step further with time. The requirements for the program are as below.
 
