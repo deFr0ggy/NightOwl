@@ -1,8 +1,3 @@
-<h1 align="center">
-  <br>
-  <a href="https://github.com/deFr0ggy/NightOwl/"><img src="https://i.imgur.com/14nkmdR.png" alt="Email Butcher"></a>
-</h1>
-
 <h4 align="center">Python script to butcher Email Headers</h4>
 
 Every organization receives SPAM, Phishing and Spear Phishing Emails. Whenever such emails are received the first and the foremost actions required is to get the Email Headers which are then shared either with the MSSP currently looking after your security or with the internal Security Analyst. The reason is to find all the required information i.e. to perform Email Forensics in order to find answers like. 
@@ -27,14 +22,28 @@ I have developed this script during my day job and I do plan to take it one step
 ```
 ## Usage
 ```
-     _____ __  __    _    ___ _       ____  _   _ _____ ____ _   _ _____ ____  
-    | ____|  \/  |  / \  |_ _| |     | __ )| | | |_   _/ ___| | | | ____|  _ \ 
-    |  _| | |\/| | / _ \  | || |     |  _ \| | | | | || |   | |_| |  _| | |_) |
-    | |___| |  | |/ ___ \ | || |___  | |_) | |_| | | || |___|  _  | |___|  _ < 
-    |_____|_|  |_/_/   \_\___|_____| |____/ \___/  |_| \____|_| |_|_____|_| \_ 
+   
+██████   █████  ███           █████       █████          ███████                    ████ 
+░░██████ ░░███  ░░░           ░░███       ░░███         ███░░░░░███                 ░░███ 
+ ░███░███ ░███  ████   ███████ ░███████   ███████      ███     ░░███ █████ ███ █████ ░███ 
+ ░███░░███░███ ░░███  ███░░███ ░███░░███ ░░░███░      ░███      ░███░░███ ░███░░███  ░███ 
+ ░███ ░░██████  ░███ ░███ ░███ ░███ ░███   ░███       ░███      ░███ ░███ ░███ ░███  ░███ 
+ ░███  ░░█████  ░███ ░███ ░███ ░███ ░███   ░███ ███   ░░███     ███  ░░███████████   ░███ 
+ █████  ░░█████ █████░░███████ ████ █████  ░░█████     ░░░███████░    ░░████░████    █████
+░░░░░    ░░░░░ ░░░░░  ░░░░░███░░░░ ░░░░░    ░░░░░        ░░░░░░░       ░░░░ ░░░░    ░░░░░ 
+                      ███ ░███                                                            
+                     ░░██████                                                             
+                      ░░░░░░                                                              
 
-    Coded by deFr0ggy - An Abnormal Frog!
-    Usage: ./EmailButcher.py <EmailHeadersFile>
+
+    OFFLINE PHISHING EMAIL BUTCHER
+    Coded by Kamran Saifullah - Frog Man
+    -----------------------------------------
+    Usage: ./NightOwl.py <Mices>
+    -----------------------------------------
+    LinkedIn: https://www.linkedin.com/in/kamransaifullah/
+    GitHub: https://github.com/deFr0ggy
+    Twitter: https://twitter.com/deFr0ggy
     
 ```
 ## Installing Dependencies
