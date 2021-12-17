@@ -1,3 +1,20 @@
+
+   ```
+██████   █████  ███           █████       █████          ███████                    ████ 
+░░██████ ░░███  ░░░           ░░███       ░░███         ███░░░░░███                 ░░███ 
+ ░███░███ ░███  ████   ███████ ░███████   ███████      ███     ░░███ █████ ███ █████ ░███ 
+ ░███░░███░███ ░░███  ███░░███ ░███░░███ ░░░███░      ░███      ░███░░███ ░███░░███  ░███ 
+ ░███ ░░██████  ░███ ░███ ░███ ░███ ░███   ░███       ░███      ░███ ░███ ░███ ░███  ░███ 
+ ░███  ░░█████  ░███ ░███ ░███ ░███ ░███   ░███ ███   ░░███     ███  ░░███████████   ░███ 
+ █████  ░░█████ █████░░███████ ████ █████  ░░█████     ░░░███████░    ░░████░████    █████
+░░░░░    ░░░░░ ░░░░░  ░░░░░███░░░░ ░░░░░    ░░░░░        ░░░░░░░       ░░░░ ░░░░    ░░░░░ 
+                      ███ ░███                                                            
+                     ░░██████                                                             
+                      ░░░░░░                                                              
+
+  ```
+
+
 <h4 align="center">Python script to butcher Email Headers</h4>
 
 Every organization receives SPAM, Phishing and Spear Phishing Emails. Whenever such emails are received the first and the foremost actions required is to get the Email Headers which are then shared either with the MSSP currently looking after your security or with the internal Security Analyst. The reason is to find all the required information i.e. to perform Email Forensics in order to find answers like. 
