@@ -11,7 +11,7 @@ colorama.init(autoreset=True)
 
 global count
 
-AbusedIPDB_API = ""
+AbusedIPDB_API = "ENTER YOUR API KEY HERE"
 
 def baseGrabber():
 
@@ -29,15 +29,21 @@ def baseGrabber():
                 print(Fore.GREEN + line)
             if line.startswith("Date: "):
                 print(Fore.RED + line) 
+            if line.startswith("Message-ID: "):
+                print(Fore.GREEN + line)
+            if line.startswith("Return-Path:"):
+                print(Fore.YELLOW + line)
+            if line.startswith("Return-To:"):
+                print(Fore.GREEN + line)
+            if line.startswith("List-Unsubscribe:"):
+                print(Fore.YELLOW + line)
             if line.startswith("Message Body: "):
                 print(Fore.GREEN + line)
             if line.startswith("Received: "):
                 count += 1
-            if line.startswith("Message-ID: "):
-                print(Fore.GREEN + line)
 
 
-    print("-> Total HOPS Count: " + str(count) + "\n")
+    print("+> Total HOPS Count: " + str(count) + "\n")
 
 
 def ipGrabber():
@@ -55,8 +61,6 @@ def ipGrabber():
                 IP.append(match)
                 IP_COUNT += 1
                 print("\n" + str(IP_COUNT) + Fore.YELLOW + " - IP Address: " + match)
-                # abusedIP(match)
-                # print("\n")
 
 def emailGrabber():
     print(Fore.BLUE + "-"*50)
@@ -73,6 +77,7 @@ def emailGrabber():
                 print(Fore.YELLOW + match + "\n")
 
 def urlGrabber():
+    print("\n")
     print(Fore.BLUE + "-"*50)
     print(Fore.BLUE + "Butchering All The URLs!")
     print(Fore.BLUE + "-"*50 + "\n")
@@ -95,23 +100,22 @@ def urlGrabber():
         IP_ADDR = socket.gethostbyname(match)
         print("\n" + "Domain: " + match + "\n" + "IP Address: "+ IP_ADDR)
 
-        # abusedIP(IP_ADDR)
-        # whoisit(match)
-
-def htmlHunter():
+def embeddedContents():
     print("\n")
     print(Fore.BLUE + "-"*50)
-    print(Fore.BLUE + "Checking If There Is An HTML File Embedded")
+    print(Fore.BLUE + "Checking If There Is Are Any Embedded Contents")
     print(Fore.BLUE + "-"*50)
     contents = []
     with open(sys.argv[1],'r', encoding='utf-8') as sample:
         for line in sample:
-            if line.startswith("<!DOCTYPE") or line.startswith("<html>"):
+            if line.startswith("Content-Type:"):
+                print(Fore.YELLOW + line)
+            if line.startswith("<!DOCTYPE") or line.startswith("<html>") or line.startswith("<meta"):
                 contents.append(line)
                 for line in sample:
                     contents.append(line)
     if not contents:
-        print(Fore.GREEN + "There was no HTML file embedded!")
+        print(Fore.GREEN + "There Were No Embedded Contents Found")
     else:
         print(Fore.BLUE + "\n" + "-"*50)
         conscent = input("HTML Contents Found - Do you want to save it? [Y/N]: ")
@@ -209,7 +213,7 @@ def main():
         ipGrabber()
         urlGrabber()
         xHunter()
-        htmlHunter()
+        embeddedContents()
 
 if __name__ == "__main__":
     main()
