@@ -2,7 +2,6 @@ import json
 import sys
 import os
 import re
-from warnings import catch_warnings
 import colorama
 import requests
 import socket

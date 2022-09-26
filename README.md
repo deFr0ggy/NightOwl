@@ -34,7 +34,14 @@ I have developed this script during my day job and I do plan to take it one step
 ```
 1. Python3
 2. Colorama
+3. Requests
+4. Re
+5. Os
+6. Sys
+7. Json
+8. Socket
 ```
+
 ## Usage
 ```
    
