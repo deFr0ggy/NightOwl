@@ -5,13 +5,103 @@ import re
 import colorama
 import requests
 import socket
+import extract_msg
 from colorama import Fore, Style
 from requests.models import HTTPBasicAuth
 colorama.init(autoreset=True)
 
 global count
 
+c_path = os.getcwd()
+
 AbusedIPDB_API = "ENTER YOUR API KEY HERE"
+
+def fileChecker():
+
+    if sys.argv[1].endswith('.msg'):
+        msgGrabber(sys.argv[1])
+    elif sys.argv[1].endswith('.eml'):
+        baseGrabber()
+    else:
+        print(Fore.RED + "The file is in " + sys.argv[1].split(".")[-1] + " format: " + sys.argv[1])
+
+def msgGrabber(file):
+
+    try:
+        print(Fore.CYAN + "[+] File Name: " + file + "\n")
+        with extract_msg.openMsg(file) as messageFile:
+            print(Fore.GREEN + "[+] From: " + Fore.RESET + str(messageFile.sender))
+            print(Fore.GREEN + "[+] To: " + Fore.RESET + str(messageFile.to))
+            print(Fore.GREEN + "[+] Subject: " + Fore.RESET  + str(messageFile.subject))
+            print(Fore.GREEN + "[+] CC: " + Fore.RESET  + str(messageFile.cc))
+            print(Fore.GREEN + "[+] BCC: " + Fore.RESET  + str(messageFile.bcc))
+            print(Fore.GREEN + "[+] Email Time: " + Fore.RESET  + str(messageFile.receivedTime))
+            if len(messageFile.attachments) > 0:
+                print(Fore.GREEN + "[+] Attachment Found - Saving in current directory!\n\n")
+                for attachment in messageFile.attachments:
+                     attachmentName = attachment.getFilename()
+                     print(Fore.CYAN + attachmentName + "\n")
+                     attachment.save(customPath= c_path)
+            else:
+                print(Fore.GREEN + "[+] No Attachments Observed")
+            messageBody = str(messageFile.body)
+            trucatedBody = messageBody.replace('\r', ' ')
+            print(Fore.GREEN + "[+] Email Body\n\n" + Fore.YELLOW + trucatedBody)
+            msgIPGrabber(trucatedBody)
+            msgEmailGrabber(trucatedBody)
+            msgURLGrabber(trucatedBody)
+            messageFile.close()
+    except:
+        print("Something Went Wrong!")
+
+
+def msgIPGrabber(bodyWell):
+
+        IP = [] 
+        IP_COUNT = 0
+        regex = re.findall(r'\b(?:\d{1,3}\.){3}\d{1,3}\b',bodyWell)
+        
+        try:
+            if regex is not None:
+                for match in regex:
+                    if match not in IP:
+                        IP.append(match)
+                        IP_COUNT += 1
+                        print("\n" + str(IP_COUNT) + Fore.Green + " - IP Address: " + match)
+        except:
+            print("Something Goes Wrong In Grabbing MSG IPs")
+
+def msgEmailGrabber(emailBody):
+        
+        EMAIL = [] 
+        regex = re.findall(r'[\w\.-]+@[\w\.-]+', emailBody)
+        
+        try:
+            if regex is not None:
+                print(Fore.GREEN + "[+] Emails Observed In Email Body\n")
+                for match in regex:
+                    if match not in EMAIL:
+                        EMAIL.append(match)
+                        print(match)
+            print("\n")
+        except:
+            print("Something Goes Wrong In Grabbing MSG Emails")
+
+def msgURLGrabber(urlFile):
+
+        try:
+            print(Fore.GREEN + "[+] URLs Observed\n\n") 
+            URL = [] 
+            regex = re.findall(r'(http(.*)?://\S+)',urlFile)
+            if regex is not None:
+                for match in regex:
+                    urlFound = str(match)
+                    urlFound = re.sub("[(\']", "", urlFound)
+                    urlFound = re.sub(">", "", urlFound)
+                    urlFound = re.sub("<", "", urlFound)
+                    print(urlFound.strip())
+        except:
+            print("Something Goes Wrong In MSG URL")
 
 def baseGrabber():
 
@@ -225,7 +315,7 @@ def banner():
 
 
     OFFLINE PHISHING EMAIL BUTCHER
-    Coded by Kamran Saifullah - Frog Man
+    Coded by Kamran Saifullah - Frog Man v1.0
     -----------------------------------------
     Usage: ./NightOwl.py <Mices>
     -----------------------------------------
@@ -243,7 +333,7 @@ def main():
     if len(sys.argv) < 2 or len(sys.argv) > 2:
         print(Fore.YELLOW + "Invalid number of arguments provided!")
     else:
-        baseGrabber()
+        fileChecker()
 
 if __name__ == "__main__":
     main()
