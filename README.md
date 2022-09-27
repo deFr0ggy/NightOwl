@@ -56,6 +56,7 @@ The requirements for the program are as below. Please ensure to have the followi
 7. Json
 8. Socket
 9. Extract MSG
+10. Email
 ```
 
 ## Usage
