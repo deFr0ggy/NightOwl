@@ -12,8 +12,10 @@ colorama.init(autoreset=True)
 
 global count
 
+emailFName = sys.argv[1]
+emailFNameF = emailFName.split(" ")[1]
 c_path = os.getcwd()
-exportedPath = os.path.join(c_path, "Attachments")
+exportedPath = os.path.join(c_path, emailFNameF)
 
 try:
     if os.path.exists(exportedPath) is True:
