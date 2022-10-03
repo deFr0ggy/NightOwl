@@ -1,20 +1,28 @@
-import json
 import email
 from email import policy
+from genericpath import exists
 import sys
 import os
 import re
+from typing import Final
 import colorama
-import requests
-import socket
 import extract_msg
-from colorama import Fore, Style
-from requests.models import HTTPBasicAuth
+from colorama import Fore
 colorama.init(autoreset=True)
 
 global count
 
 c_path = os.getcwd()
+exportedPath = os.path.join(c_path, "Attachments")
+
+try:
+    if os.path.exists(exportedPath) is True:
+        exit
+    else:
+        os.mkdir(exportedPath)
+except:
+    print("Creating The Path: " + exportedPath)
+
 
 def fileChecker():
 
@@ -41,7 +49,7 @@ def msgGrabber(file):
                 for attachment in messageFile.attachments:
                      attachmentName = attachment.getFilename()
                      print(Fore.CYAN + attachmentName + "\n")
-                     attachment.save(customPath= c_path)
+                     attachment.save(customPath= exportedPath)
             else:
                 print(Fore.GREEN + "[+] No Attachments Observed")
             messageBody = str(messageFile.body)
