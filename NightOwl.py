@@ -13,7 +13,7 @@ colorama.init(autoreset=True)
 global count
 
 emailFName = sys.argv[1]
-emailFNameF = emailFName.split(" ")[1]
+emailFNameF = "Attachments"
 c_path = os.getcwd()
 exportedPath = os.path.join(c_path, emailFNameF)
 
@@ -47,7 +47,7 @@ def msgGrabber(file):
             print(Fore.GREEN + "[+] BCC: " + Fore.RESET  + str(messageFile.bcc))
             print(Fore.GREEN + "[+] Email Time: " + Fore.RESET  + str(messageFile.receivedTime))
             if len(messageFile.attachments) > 0:
-                print(Fore.GREEN + "[+] Attachment Found - Saving in current directory!\n\n")
+                print(Fore.GREEN + "[+] Attachment Found - Saving in Attachments!\n\n")
                 for attachment in messageFile.attachments:
                      attachmentName = attachment.getFilename()
                      print(Fore.CYAN + attachmentName + "\n")
@@ -255,8 +255,8 @@ def embedAttachments():
             attachFile = email.message_from_file(f, policy=policy.default)
             for attachment in attachFile.iter_attachments():
                     attName = attachment.get_filename()
-                    print(Fore.GREEN + "\n[+] File Found & Written In Current PATH: " + Fore.RESET + attName)
-                    with open(os.path.join(c_path, attName), "wb") as fileWrite:
+                    print(Fore.GREEN + "\n[+] File Found & Written In Attachments: " + Fore.RESET + attName)
+                    with open(os.path.join(exportedPath, attName), "wb") as fileWrite:
                             fileWrite.write(attachment.get_payload(decode=True))
 
     except:
