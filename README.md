@@ -49,10 +49,14 @@ The requirements for the program are as below. Please ensure to have the followi
 ```
 1. Python3
 2. Colorama
-3. Re
-4. Os
-5. Sys
-6. Extract MSG
+3. Requests
+4. Re
+5. Os
+6. Sys
+7. Json
+8. Socket
+9. Extract MSG
+10. Email
 ```
 
 ## Usage
@@ -112,7 +116,7 @@ The script also looks for all the available URLs from the email headers and prov
 The script hunts down all the HTML contents if it is present in the Email Headers. It alerts that there is an HTML content present in the email and asks for the output file where it can write that data to for later analysis.
 
 ## Butchering Email Attachments
-The script is now able to find the attachments in the email (all types) and to have them saved in the **Attachments Folder** of the script for later investigations.
+The script is now able to find the attachments in the email (all types) and to have them saved in the current working directory of the script for later investigations.
 
 ## Listing Down All X-* Headers
 
