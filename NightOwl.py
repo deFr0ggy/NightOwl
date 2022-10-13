@@ -12,7 +12,6 @@ colorama.init(autoreset=True)
 
 global count
 
-emailFName = sys.argv[1]
 emailFNameF = "Attachments"
 c_path = os.getcwd()
 exportedPath = os.path.join(c_path, emailFNameF)
@@ -299,6 +298,7 @@ def main():
     if len(sys.argv) < 2 or len(sys.argv) > 2:
         print(Fore.YELLOW + "Invalid number of arguments provided!")
     else:
+        emailFName = sys.argv[1]
         fileChecker()
 
 if __name__ == "__main__":

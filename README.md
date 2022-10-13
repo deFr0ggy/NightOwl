@@ -60,29 +60,8 @@ The requirements for the program are as below. Please ensure to have the followi
 ```
 
 ## Usage
-```
-██████   █████  ███           █████       █████          ███████                    ████ 
-░░██████ ░░███  ░░░           ░░███       ░░███         ███░░░░░███                 ░░███ 
- ░███░███ ░███  ████   ███████ ░███████   ███████      ███     ░░███ █████ ███ █████ ░███ 
- ░███░░███░███ ░░███  ███░░███ ░███░░███ ░░░███░      ░███      ░███░░███ ░███░░███  ░███ 
- ░███ ░░██████  ░███ ░███ ░███ ░███ ░███   ░███       ░███      ░███ ░███ ░███ ░███  ░███ 
- ░███  ░░█████  ░███ ░███ ░███ ░███ ░███   ░███ ███   ░░███     ███  ░░███████████   ░███ 
- █████  ░░█████ █████░░███████ ████ █████  ░░█████     ░░░███████░    ░░████░████    █████
-░░░░░    ░░░░░ ░░░░░  ░░░░░███░░░░ ░░░░░    ░░░░░        ░░░░░░░       ░░░░ ░░░░    ░░░░░ 
-                      ███ ░███                                                            
-                     ░░██████                                                             
-                      ░░░░░░                                                              
 
-
-    OFFLINE PHISHING EMAIL BUTCHER
-    Coded by Kamran Saifullah - Frog Man v1.0
-    -----------------------------------------
-    Usage: ./NightOwl.py <Mices>
-    -----------------------------------------
-    LinkedIn: https://www.linkedin.com/in/kamransaifullah/
-    GitHub: https://github.com/deFr0ggy
-    Twitter: https://twitter.com/deFr0ggy
-```
+![](./night.png)
 
 ## Butchering Details From Emails
 
