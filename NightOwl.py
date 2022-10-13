@@ -11,22 +11,22 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 global count
-global emailFName
 
-def attachmentChecker(argument):
+if len(sys.argv) < 2 or len(sys.argv) > 2:
+        exit
+else:
+        emailFName = sys.argv[1]
+        emailFNameF = "Attachments"
+        c_path = os.getcwd()
+        exportedPath = os.path.join(c_path, emailFNameF)
 
-    emailFName = argument
-    emailFNameF = "Attachments"
-    c_path = os.getcwd()
-    exportedPath = os.path.join(c_path, emailFNameF)
-
-    try:
-        if os.path.exists(exportedPath) is True:
-            exit
-        else:
-            os.mkdir(exportedPath)
-    except:
-        print("Creating The Path: " + exportedPath)
+        try:
+            if os.path.exists(exportedPath) is True:
+                exit
+            else:
+                os.mkdir(exportedPath)
+        except:
+            print("Creating The Path: " + exportedPath)
 
 
 def fileChecker():
@@ -303,7 +303,6 @@ def main():
         print(Fore.YELLOW + "Invalid number of arguments provided!")
     else:
         fileChecker()
-        attachmentChecker(sys.argv[1])
 
 if __name__ == "__main__":
     main()
