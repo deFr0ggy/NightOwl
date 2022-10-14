@@ -1,17 +1,4 @@
-```
-██████   █████  ███           █████       █████          ███████                    ████ 
-░░██████ ░░███  ░░░           ░░███       ░░███         ███░░░░░███                 ░░███ 
- ░███░███ ░███  ████   ███████ ░███████   ███████      ███     ░░███ █████ ███ █████ ░███ 
- ░███░░███░███ ░░███  ███░░███ ░███░░███ ░░░███░      ░███      ░███░░███ ░███░░███  ░███ 
- ░███ ░░██████  ░███ ░███ ░███ ░███ ░███   ░███       ░███      ░███ ░███ ░███ ░███  ░███ 
- ░███  ░░█████  ░███ ░███ ░███ ░███ ░███   ░███ ███   ░░███     ███  ░░███████████   ░███ 
- █████  ░░█████ █████░░███████ ████ █████  ░░█████     ░░░███████░    ░░████░████    █████
-░░░░░    ░░░░░ ░░░░░  ░░░░░███░░░░ ░░░░░    ░░░░░        ░░░░░░░       ░░░░ ░░░░    ░░░░░ 
-                      ███ ░███                                                            
-                     ░░██████                                                             
-                      ░░░░░░                                                              
- ```
-
+![](./banner.png)
 
 <h4 align="center">Python script to butcher Email Headers</h4>
 
@@ -59,10 +46,6 @@ The requirements for the program are as below. Please ensure to have the followi
 10. Email
 ```
 
-## Usage
-
-![](./night.png)
-
 ## Butchering Details From Emails
 
 These headers include the following.
@@ -100,5 +83,12 @@ The script is now able to find the attachments in the email (all types) and to h
 ## Listing Down All X-* Headers
 
 These headers provide a wide range of information. Also, these headers gets added to the Email as soon as the email starts to propogate. These can provides us with the information whether the email is a SPAM, Malicious, routed through MS-Exchange etc. Close attention is required for these headers.
+
+# Usage - EML/MSG Formats
+It is required to save the first email recevied and have it supplied to NightOwl. The extension should be `.eml` or `.msg` for the NightOwl to work properly.
+
+![](./working.png)
+
+The attachments will be stored automatically in `Attachments` folder.
 
 ---
